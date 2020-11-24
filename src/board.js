@@ -1,11 +1,11 @@
 const {
-    EMPTY_BOARD,
-    GAME_STARTS
+    HIDDEN_BOARD,
   } = require('./test/fixtures/boardScenarios');
 
 class Board {
     constructor() {
-        this.cells = [...EMPTY_BOARD];
+        this.cells = [...HIDDEN_BOARD];
+        this.bombCells = [' ', ' ', ' ', ' ', 'X', ' ', ' ', ' ', ' '];
     }
 
     printBoard() {
@@ -13,9 +13,7 @@ class Board {
         return board;
       }
 
-    startGame() {
-        console.log(`${this.printBoard()}${GAME_STARTS}`);
-    }
+
 }
 
 module.exports = Board;
