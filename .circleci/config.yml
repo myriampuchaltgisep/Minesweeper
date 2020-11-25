@@ -20,14 +20,12 @@ jobs:
       - checkout
       - run: npm test
 workflows:
-  build_and_test:
-    triggers:
-      - schedule:
-          filters:
-            branches:
-              only:
-                - master
+  build_and_test:  
     jobs:
       - build:
           context: sonarcloud
+          filters:
+            branches:
+              only:
+                - master 
       - test
