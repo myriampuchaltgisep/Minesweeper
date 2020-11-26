@@ -1,7 +1,19 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
+  sonarcloud: sonarsource/sonarcloud@1.0.2
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004:202008-01
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run build --if-present
+      - sonarcloud/scan
 workflows:
-  node-tests:
+  build_and_test:  
     jobs:
+      - build:
+          context: Sonarcloud
       - node/test
