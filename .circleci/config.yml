@@ -11,15 +11,9 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - sonarcloud/scan
-  test:
-    machine:
-      image: ubuntu-2004:202008-01
-    steps:
-      - checkout
-      - run: npm test
 workflows:
   build_and_test:  
     jobs:
       - build:
           context: Sonarcloud
-      - test
+      - node/test
