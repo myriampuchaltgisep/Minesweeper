@@ -18,7 +18,7 @@ const GAME_OVER_BOARD =
 | | | |
 Game over!`;
 
-CLEAN_CELL_BOARD = 
+const CLEAN_CELL_BOARD = 
 `+-+-+-+
 | | | |
 +-+-+-+
