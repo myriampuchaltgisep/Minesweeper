@@ -21,9 +21,5 @@ workflows:
   build_and_test:  
     jobs:
       - build:
-          context: sonarcloud
-          filters:
-            branches:
-              only:
-                - master 
+          context: Sonarcloud
       - test
