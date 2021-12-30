@@ -1,5 +1,6 @@
 const Board = require('../board');
 const Game = require('../game');
+const executeGame = require('../index');
 const mockConsoleLog = jest.spyOn(global.console, 'log');
 
 const {
@@ -82,4 +83,8 @@ describe('Uncover a clean cell and get the number of bombs around', () => {
         game.uncoverField(2,0);
         expect(mockConsoleLog).toBeCalledWith(CLEAN_CELL_BOARD);
     });
+});
+
+describe('Execute Game', () => {
+    executeGame();
 });
